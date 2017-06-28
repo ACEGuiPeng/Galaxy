@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>HTML5 galaxy</title>
+<style>
+body {
+  background: #060e1b;
+  overflow: hidden;
+}
+/*canvas标签是图形容器*/
+canvas {
+	/*透明度，调整星星的稀疏度*/
+    margin: 0;
+    padding: 0;
+  opacity: 1;
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+</style>
+
+</head>
+
+<body onload="getJson()">
+<script src="js/galaxy.js" type="text/javascript" rel="script"></script>
+<canvas id="canvas"></canvas>
+<script>
+    function getJson() {
+        /*设置动画的相关参数
+        *  starColor ： 颜色
+        *  starCount: 画布中星星个数
+        *  starWeight: 颜色权重
+        *  starSpeed: 星星移动速度，越大越慢
+        * */
+        var starJson ='{"starColor":["#FF0800","#4169E1","#FFFF00"],"starCount":"800","starWeight":["30","30","30"],"starSpeed":"90000"}';
+        var obj=JSON.parse(starJson);
+        runStar(obj);
+    }
+</script>
+
+</body>
+</html>
